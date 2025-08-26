@@ -32,21 +32,6 @@
   font-family: "Segoe UI", sans-serif;
   color: #333;
 
-  h1 {
-    text-align: center;
-    font-size: 28px;
-    margin-bottom: 5px;
-    color: #2c3e50;
-  }
-
-  h3 {
-    text-align: center;
-    font-size: 18px;
-    font-weight: 400;
-    margin-bottom: 25px;
-    color: #555;
-  }
-
   form {
     display: flex;
     flex-direction: column;
@@ -59,8 +44,7 @@
       font-weight: 600;
       color: #444;
 
-      input,
-      select {
+      input {
         margin-top: 6px;
         padding: 10px;
         border: 1px solid #ccc;
@@ -80,32 +64,6 @@
       }
     }
 
-    fieldset {
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 12px;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-
-      legend {
-        font-size: 14px;
-        font-weight: bold;
-        color: #2c3e50;
-        padding: 0 6px;
-      }
-
-      label {
-        flex-direction: row;
-        align-items: center;
-        font-weight: 500;
-
-        input {
-          margin-right: 8px;
-        }
-      }
-    }
-
     button {
       margin-top: 10px;
       padding: 12px;
@@ -114,23 +72,17 @@
       border: none;
       border-radius: 10px;
       cursor: pointer;
+      background: #3498db;
+      color: white;
       transition: 0.3s ease;
 
       &:hover {
         transform: translateY(-2px);
+        background: #2980b9;
       }
 
       &:active {
         transform: translateY(1px);
-      }
-    }
-
-    .pay-button {
-      background-color: red;
-      color: white;
-
-      &.paid {
-        background-color: green;
       }
     }
   }
@@ -155,69 +107,76 @@
     min-width: 300px;
 
     h3 {
-      margin-bottom: 20px;
+      margin-bottom: 10px;
       color: #2c3e50;
     }
+  }
+}
 
-    label {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin: 6px 0;
-      font-size: 15px;
-      font-weight: 500;
-      color: #333;
+/* Qeydiyyat Cədvəli */
+.table-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 
-      input[type="radio"] {
-        accent-color: #3498db;
-        transform: scale(1.1);
-      }
-    }
+  h2 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: #2c3e50;
+  }
 
-    .payment-warning {
-      color: red;
+  table {
+    width: 100%;
+    border-collapse: collapse;
+
+    th,
+    td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
       font-size: 14px;
-      margin-top: 10px;
-      font-weight: 600;
     }
 
-    .modal-actions {
-      margin-top: 15px;
-      display: flex;
-      justify-content: center;
-      gap: 10px;
+    th {
+      background: #3498db;
+      color: white;
+    }
 
-      button {
-        padding: 10px 20px;
-        border-radius: 8px;
-        border: none;
-        cursor: pointer;
-        font-weight: bold;
-        background: #3498db;
-        color: white;
-        transition: 0.3s ease;
+    tr:nth-child(even) {
+      background: #f9f9f9;
+    }
 
-        &:hover {
-          background: #2980b9;
-        }
+    button {
+      background: red;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      padding: 5px 10px;
+      cursor: pointer;
+      font-size: 13px;
+
+      &:hover {
+        background: darkred;
       }
     }
   }
 }
+
+/* Seçilməyənlər üçün */
+.missing {
+  color: red;
+  font-weight: bold;
+}
+
+/* Responsive */
 @media (max-width: 600px) {
   .registration {
     max-width: 100%;
     margin: 20px 10px;
     padding: 15px;
-
-    h1 {
-      font-size: 22px;
-    }
-
-    h3 {
-      font-size: 16px;
-      margin-bottom: 15px;
-    }
 
     form {
       gap: 14px;
@@ -225,8 +184,7 @@
       label {
         font-size: 13px;
 
-        input,
-        select {
+        input {
           font-size: 13px;
           padding: 8px;
         }
@@ -236,20 +194,22 @@
         }
       }
 
-      fieldset {
-        padding: 10px;
-        legend {
-          font-size: 13px;
-        }
-        label {
-          font-size: 13px;
-        }
-      }
-
       button {
         width: 100%;
         font-size: 15px;
         padding: 12px;
+      }
+    }
+  }
+
+  .table-container {
+    padding: 10px;
+    table {
+      font-size: 12px;
+
+      th,
+      td {
+        padding: 6px;
       }
     }
   }
@@ -259,64 +219,7 @@
     padding: 20px;
 
     h3 {
-      font-size: 18px;
-    }
-
-    label {
-      font-size: 14px;
-    }
-
-    .modal-actions {
-      flex-direction: column;
-      gap: 8px;
-
-      button {
-        width: 100%;
-        padding: 10px;
-      }
-    }
-  }
-}
-
-@media (max-width: 900px) {
-  .registration {
-    max-width: 90%;
-    padding: 20px;
-
-    h1 {
-      font-size: 24px;
-    }
-
-    h3 {
-      font-size: 17px;
-    }
-
-    form {
-      gap: 16px;
-
-      label {
-        font-size: 14px;
-
-        input,
-        select {
-          font-size: 14px;
-          padding: 9px;
-        }
-      }
-
-      button {
-        font-size: 15px;
-        padding: 12px;
-      }
-    }
-  }
-
-  .modal .modal-content {
-    width: 80%;
-    padding: 22px;
-
-    h3 {
-      font-size: 20px;
+      font-size: 16px;
     }
   }
 }
